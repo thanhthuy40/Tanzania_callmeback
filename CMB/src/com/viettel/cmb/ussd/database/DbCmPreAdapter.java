@@ -57,7 +57,7 @@ public class DbCmPreAdapter {
 			String msisdnCheck = UssdUtils.standardMsisdn(msisdn);
 			this.log.info("Check subscirber " + msisdnCheck + " is PrePaid");
 			pre = connection
-					.prepareStatement(" select isdn,act_status from cm_pre.sub_mb where isdn =? ");
+					.prepareStatement(" select isdn,act_status from cm_pre.sub_mb where isdn =? and act_status='00' and end_time not null");
 			pre.setString(1, msisdnCheck);
 			set = pre.executeQuery();
 			if (set.next()) {
