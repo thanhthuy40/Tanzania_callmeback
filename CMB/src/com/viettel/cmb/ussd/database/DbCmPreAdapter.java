@@ -70,7 +70,7 @@ public class DbCmPreAdapter {
 				this.log.info("Subscriber is block2 way");
 				return StateOfSub.BLOCK2WAY;
 			}
-
+			this.log.info("add test");
 			this.log.info("Subscriber is unknow subscriber");
 			return StateOfSub.UNKNOW;
 		}
