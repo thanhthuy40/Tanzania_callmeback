@@ -54,7 +54,7 @@ public class DbCmPosAdapter {
 				return false;
 			}
 			String msisdnCheck = UssdUtils.standardMsisdn(msisdn);
-			pre = connection.prepareStatement("select isdn from cm_pos.sub_mb where isdn =? and act_status='000' ");
+			pre = connection.prepareStatement("select isdn from cm_pos.sub_mb where isdn =? and act_status='000' and end_time not null");
 			this.log.info("Check subscirber " + msisdnCheck + " is postpraid");
 			pre.setString(1, msisdnCheck);
 			set = pre.executeQuery();
